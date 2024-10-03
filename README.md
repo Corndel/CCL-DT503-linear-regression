@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Height-Weight Linear Regression Visualization
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React component provides a interactive visualization of the relationship between height and weight using linear regression. It generates random data based on UK averages, calculates BMI, performs linear regression, and displays the results in a scatter plot with a regression line.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Random data generation based on UK height and weight averages
+- BMI calculation for each data point
+- Linear regression calculation
+- Interactive scatter plot visualization
+- Regression line display
+- Detailed tooltips for each data point
+- Regression results panel (slope, intercept, and equation)
+- Responsive design
+- Customizable color scheme
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Ensure you have React and npm (Node Package Manager) installed in your project.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Install the required dependencies:
 
-### `npm test`
+```bash
+npm install recharts
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Copy the `HeightWeightLinearRegression.js` file into your project's components directory.
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Import the component in your React application:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```jsx
+import HeightWeightLinearRegression from "./path/to/HeightWeightLinearRegression";
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Use the component in your JSX:
 
-### `npm run eject`
+```jsx
+function App() {
+  return (
+    <div className="App">
+      <HeightWeightLinearRegression />
+    </div>
+  );
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Customization
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You can customize the color scheme by modifying the `colorScheme` object at the top of the `HeightWeightLinearRegression.js` file:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```javascript
+const colorScheme = {
+  primary: "#0066cc",
+  secondary: "#5ac8fa",
+  background: "#f5f5f5",
+  text: "#1c3f60",
+  grid: "#e0e0e0",
+};
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Component Structure
 
-## Learn More
+- `generateRandomUKData`: Generates random height and weight data
+- `normalRandom`: Utility function for generating normally distributed random numbers
+- `calculateBMI`: Calculates BMI for given height and weight
+- `calculateLinearRegression`: Performs linear regression on the data
+- `updateDomains`: Updates the domains for the X and Y axes
+- `CustomTooltip`: Renders a custom tooltip for data points
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Dependencies
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React
+- recharts
 
-### Code Splitting
+## Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- The component uses UK averages for height and weight. Adjust the `normalRandom` parameters in `generateRandomUKData` if you need different distributions.
+- The linear regression is performed using the least squares method.
+- The component is responsive and will adjust to the width of its container.
 
-### Analyzing the Bundle Size
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions to improve the component are welcome. Please follow these steps:
 
-### Making a Progressive Web App
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
+Distributed under the MIT License. See `LICENSE` for more information.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contact
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Gareth Day - gareth.day@corndel.com
